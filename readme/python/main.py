@@ -46,37 +46,54 @@ def generate_readme(project_name, requirements, packagejson, licenza):
     prompt = f"""
 Sei un assistente esperto nella scrittura di README per progetti software. Ti fornirò alcune informazioni chiave riguardo un progetto, come nome, descrizione, obiettivi, funzionalità, dataset, istruzioni di installazione, licenza e contatti.
 
-Il tuo compito è creare un README ben strutturato, chiaro e professionale, seguendo questa struttura e stile:
+IMPORTANTE:
+- Non iniziare dicendo che sei un AI o cose tipo "Ecco il README".
+- Dai direttamente il contenuto.
+- Scrivi nella lingua coerente con quella del progetto (italiano se è italiano, inglese se in inglese, ecc.)
+
+Il tuo compito è creare un README ben strutturato, chiaro e professionale, seguendo questa struttura di base:
 
 # [Nome Progetto con emoji (CI TENGO AL FATTO CHE CI SIA UN EMOJI CARINA COERENTE COL PROGETTO)]
 
 [Descrizione sintetica del progetto, obiettivi e ambito di utilizzo.]
 
-## 📌 Introduzione
+## 📌 Introduzione  
+[Spiegazione più dettagliata del progetto e del problema che risolve.]
 
-Spiegazione più dettagliata del progetto e del problema che risolve.
+## 🧑‍💻 Funzionalità  
+[Elenco puntato delle principali funzionalità.]
 
-## 🧑‍💻 Funzionalità
+## 📊 Dataset  
+[Descrizione del dataset, se presente.]
 
-Elenco puntato delle principali funzionalità, con brevi descrizioni.
+## 🛠️ Installazione  
+[Istruzioni passo-passo per configurazione e avvio.]
 
-## 📊 Dataset
+## 📜 Licenza  
+[Tipo di licenza e note rilevanti.]
 
-Descrizione del dataset usato o richiesto, con indicazioni su dove trovarlo o come ottenerlo.
-
-## 🛠️ Installazione
-
-Istruzioni dettagliate per installare e avviare il progetto, divise in passaggi per frontend, backend o altro.
-
-## 📜 Licenza
-
-Descrizione della licenza sotto cui è distribuito il progetto.
-
-## 📫 Contatti
-
-Informazioni per contattare il creatore o il team, come email, GitHub, sito web.
+## 📫 Contatti  
+[Email, GitHub o altri riferimenti del team.]
 
 ---
+
+🧠 Regole per rendere ogni README unico e interattivo:
+- Varia l’ordine delle sezioni (tranne titolo e introduzione).
+- Usa stili narrativi diversi a seconda del progetto: descrittivo, tecnico, ispirazionale o sintetico.
+- Inserisci elementi dinamici come:
+  - Link interni (`[Vai a Funzionalità](#funzionalità)`)
+  - Blocchi `<details>` per esempi o dettagli tecnici
+  - Badge dinamici da shields.io
+  - Tabelle, callout emoji (⚠️, 💡)
+  - GIF o immagini illustrative se il progetto lo consente
+- Se presenti, sfrutta `requirements.txt`, `package.json`, `Dockerfile`, ecc. per arricchire sezioni tecniche.
+- Aggiungi eventualmente sezioni extra come:
+  - ✨ Esempi d'Uso
+  - 🧪 Come contribuire
+  - 📎 Link utili
+  - 💬 FAQ
+
+Se qualche informazione non è disponibile, omettila senza avvisi.
 
 Ora, usa le informazioni che ti do di seguito per generare il README in questo formato, ma con un testo completamente nuovo, unico e coerente con il contesto fornito.
 
@@ -90,10 +107,6 @@ package.json: {packagejson}
 
 Licenza: {licenza}
 
-
----
-
-Scrivi il README completo seguendo la struttura e lo stile sopra.
 """
 
     contents = [
