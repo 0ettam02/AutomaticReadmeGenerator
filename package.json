@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@heroui/input": "^2.4.24",
+    "@octokit/core": "^7.0.3"
+  }
+}
